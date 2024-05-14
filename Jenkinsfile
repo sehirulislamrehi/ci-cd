@@ -7,7 +7,7 @@ pipeline {
         COMPOSER_HOME = "C:\\Users\\Administrator\\AppData\\Roaming\\Composer"
         PROJECT_DIR = "E:\\PRAN-RFL\\practise\\CI-CD"
         JENKINS_DIR = "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\LaravelTest"
-        SSH_CREDENTIALS = credentials('your-ssh-credentials-id')
+        SSH_CREDENTIALS = credentials('crm-test')
     }
 
     stages {
