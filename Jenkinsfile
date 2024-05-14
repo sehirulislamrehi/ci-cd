@@ -56,7 +56,7 @@ pipeline {
 
     post {
         success {
-            sh 'cd "E:\PRAN-RFL\practise\CI-CD" '                                
+            sh 'cd "E:\\PRAN-RFL\\practise\\CI-CD" '                                
             sh 'ni hello.txt'                                
         }
         always {
