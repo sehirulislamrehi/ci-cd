@@ -11,9 +11,6 @@ pipeline {
 
     stages {
         stage("For Main") {
-            when {
-                branch 'main'
-            }
             steps {
                 script {
                     sshagent(credentials: ['LaravelTest']) {
