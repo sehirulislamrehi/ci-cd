@@ -21,6 +21,9 @@ pipeline {
                             ssh -o StrictHostKeyChecking=no root@172.17.2.162 whoami
                         '''
                     }
+                    dir("${JENKINS_DIR}") {
+                        fileOperations([fileCopyOperation(excludes: '', flattenFiles: true, includes: '.env', targetLocation: "${WORKSPACE}")])
+                    }
                 }
             }
         }
