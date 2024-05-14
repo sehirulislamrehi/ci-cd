@@ -46,12 +46,12 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
-                // Deploy the project to the server (replace with your deployment steps)
-                // Example: bat "${PHP_PATH}\\php.exe artisan migrate --force"
-            }
-        }
+        // stage('Deploy') {
+        //     steps {
+        //         // Deploy the project to the server (replace with your deployment steps)
+        //         // Example: bat "${PHP_PATH}\\php.exe artisan migrate --force"
+        //     }
+        // }
     }
 
     post {
