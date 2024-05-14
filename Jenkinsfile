@@ -29,8 +29,8 @@ pipeline {
             post {
                 success {
                     sh "cd ${JENKINS_DIR}"
-                    sh 'rm -rf artifact.zip'
-                    sh 'zip -r artifact.zip . -x "*node_modules**"'
+                    sh "rm -rf artifact.zip"
+                    sh "zip -r artifact.zip"
                     withCredentials([sshUserPrivateKey(credentialsId: "crm-test", keyFileVariable: 'keyfile')]) {
                         sh "scp -v -o StrictHostKeyChecking=no -i ${keyfile} ${JENKINS_DIR}/artifact.zip root@172.17.2.162:/root/"
                     }
