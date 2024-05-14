@@ -12,9 +12,13 @@ pipeline {
     stages {
         stage("For Main") {
             steps {
-                withCredentials([sshUserPrivateKey(credentialsId: 'crm-test', keyFileVariable: 'keyfile')]) {
-    bat "ssh -i \"${keyfile}\" -o StrictHostKeyChecking=no root@172.17.2.162 whoami"
-}
+                script {
+                    sshagent(credentials: ['crm-test']) {
+                        sh '''
+                            ssh -o StrictHostKeyChecking=no root@172.17.2.162 whoami
+                        '''
+                    }
+                }
             }
         }
     }
