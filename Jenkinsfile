@@ -9,19 +9,20 @@ pipeline {
         JENKINS_DIR = "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\LaravelTest"
     }
 
-    stage("For Main") {
-        when {
-            branch 'main'
-        }
-        steps {
-            sshagent(credentials: ['LaravelTest']) {
-                sh '''
-                    ssh -o StrictHostKeyChecking=no root@172.17.2.162 whoami
-                '''
+    stages {
+        stage("For Main") {
+            when {
+                branch 'main'
             }
-            
+            steps {
+                script {
+                    sshagent(credentials: ['LaravelTest']) {
+                        sh '''
+                            ssh -o StrictHostKeyChecking=no root@172.17.2.162 whoami
+                        '''
+                    }
+                }
+            }
         }
-        
     }
-
 }
