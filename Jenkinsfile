@@ -6,7 +6,7 @@ pipeline {
         PHP_PATH = "E:\\xampp\\php"
         COMPOSER_HOME = "C:\\Users\\Administrator\\AppData\\Roaming\\Composer"
         PROJECT_DIR = "E:\\PRAN-RFL\\practise\\CI-CD"
-        JENKINS_DIR = "C:\ProgramData\Jenkins\.jenkins\workspace\LaravelTest"
+        JENKINS_DIR = "C:\\ProgramData\\Jenkins\\.jenkins\\workspace\\LaravelTest"
     }
 
     stage("For Main") {
