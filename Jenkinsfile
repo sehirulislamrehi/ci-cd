@@ -14,7 +14,11 @@ pipeline {
         stage("For Main") {
             steps {
                 script {
-                    
+                    sshagent(credentials: ['crm-test']) {
+                        sh '''
+                            ssh -o StrictHostKeyChecking=no root@172.17.2.162 whoami
+                        '''
+                    }
                 }
             }
         }
