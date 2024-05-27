@@ -14,11 +14,14 @@ pipeline {
         stage("For Main") {
             steps {
                 script {
-                    sshagent(['crm-test']) {
-                        sh '''
-                            ssh -o StrictHostKeyChecking=no root@172.17.2.162 whoami
-                        '''
-                    }
+                    echo "PATH: ${env.PATH}"
+                    echo "PHP_PATH: ${env.PHP_PATH}"
+                    echo "COMPOSER_HOME: ${env.COMPOSER_HOME}"
+                    echo "PROJECT_DIR: ${env.PROJECT_DIR}"
+                    echo "JENKINS_DIR: ${env.JENKINS_DIR}"
+
+                    // Check if ssh-agent is available
+                    sh 'ssh-agent -v'
                 }
             }
         }
